@@ -75,25 +75,25 @@ PAGE Navigator의 Clock Configutation을 선택하고, PL Fabric Clocks에서 FC
 ### 1.3. HDL Wrapper 생성하기
 > Block Design은 바로 synthesis 될 수 없기 때문에 top-level HDL wrapper가 필요하다.
 
-1. Sources 탭에서 `design_1`을 오른쪽 클릭하고, Create HDL Wrapper를 클릭한다.
-<img src="./img/1.3.1.PNG" width="400px"><img src="./img/1.3.2.PNG" width="400px">  
+1. Sources 탭에서 `design_1`을 오른쪽 클릭하고, Create HDL Wrapper를 클릭한다.  
+<img src="./img/1.3.1.PNG" width="300px"><img src="./img/1.3.2.PNG" width="300px">  
 
 2. Let Vivado manage wrapper and auto-update를 선택하고 OK를 누른다.
 <img src="./img/1.3.3.PNG" width="400px">  
 
 HDL wrapper가 생성된 것을 확인할 수 있다.  
-<img src="./img/1.3.4.PNG" width="400px">  
+<img src="./img/1.3.4.PNG" width="300px">  
 
 ### 1.4. Bitstream 생성하기
 > 이제 우리의 기본 시스템으로 bitstream을 생성하고, Zedboard에 프로그래밍 할 수 있다. 이 시스템은 Gigabit Ethernet, USB, SD card, UART 포트, GPIO에 연결되어 있다.
 
 1. Flow Navigator에서 PROGRAM AND BEDUG의 `Generate Bitstream`을 클릭하여 bitstream을 생성한다.
-<img src="./img/1.4.1.PNG" width="400px">  
+<img src="./img/1.4.1.PNG" width="300px">  
 
 2. bitstream이 생성되면, Implementer Design을 연다.
-<img src="./img/1.4.3.PNG" width="400px">  
+<img src="./img/1.4.3.PNG" width="300px">  
 이는 우리가 구현한 디자인이 Zynq 보드에 어떻게 배치되었는지를 나타낸다. 우리의 경우 대부분의 지도가 비어있다.  
-<img src="./img/1.4.4.PNG" width="400px">  
+<img src="./img/1.4.4.PNG" width="450px">  
 
 ### 1.5. 하드웨어를 Vivado SDK로 내보내기
 > 이제 bitstream을 Vivado SDK(Sofrware Development Kit)로 보내, 프로세서에서 실행될 코드를 개발한다.
@@ -105,14 +105,14 @@ HDL wrapper가 생성된 것을 확인할 수 있다.
 <img src="./img/1.5.2.PNG" width="300px">  
 
 3. File 메뉴에서 Launch SDK를 클릭하면 다음과 같은 창이 뜬다. OK를 누르면 Vivado SDK가 실행된다.
-<img src="./img/1.5.3.PNG" width="300px"><img src="./img/1.5.4.PNG" width="300px">  
+<img src="./img/1.5.3.PNG" width="200px"> <img src="./img/1.5.4.PNG" width="300px">  
 
 ### 1.6. 소프트웨어 개발
 > Hello world를 UART 포트로 전송하여 출력하는 프로그램을 구현한다.
 <img src="./img/1.6.1.PNG" width="400px">  
 
 1. File 메뉴에서 New - Application Project를 클릭한다.
-<img src="./img/1.6.2.PNG" width="400px">  
+<img src="./img/1.6.2.PNG" width="500px">  
 
 2. Project name을 입력하고 `Next`를 클릭한다.
 <img src="./img/1.6.3.PNG" width="400px">  
@@ -131,16 +131,18 @@ HDL wrapper가 생성된 것을 확인할 수 있다.
 이 컴퓨터에서는 COM6를 사용한다.
 <img src="./img/1.7.1.PNG" width="400px">  
 
-3. SDK에서 Xilinx - Program FPGA를 클릭하고, `Program`을 클릭한다.
+3. Putty를 실행하여 Serial Port를 COM6으로 연결한다.
+<img src="./img/1.7.6.PNG" width="300px">  
+
+4. SDK에서 Xilinx - Program FPGA를 클릭하고, `Program`을 클릭한다.
 <img src="./img/1.7.2.PNG" width="400px">  
 <img src="./img/1.7.3.PNG" width="400px">  
 
-4. 왼쪽의 Program Explorer에서 hello_world1을 클릭하고, Run - Run As - Launch on Hardware (GDB)를 선택한다.
+5. 왼쪽의 Program Explorer에서 hello_world1을 클릭하고, Run - Run As - Launch on Hardware (GDB)를 선택한다.
 <img src="./img/1.7.4.PNG" width="400px">  
-<img src="./img/1.7.5.PNG" width="400px">  
+<img src="./img/1.7.5.PNG" width="250px">  
 
-5. 
-
+(6. Putty에 Hello world가 출력된 것을 확인할 수 있다.)
 
 ***
 ## 2. Zedboard에 Loopback 구현하기
